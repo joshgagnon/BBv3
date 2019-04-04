@@ -457,5 +457,76 @@ New Zealand
 </div>
 </section>
 
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#calendar-modal">
+  Book
+</button>
+
+<div class="modal fade" id="calendar-modal" tabindex="-1" role="dialog" aria-labelledby="calendar-modal" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Check Availability</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+           
+
+        <form>
+
+          <div class="form-group row">
+           <div class="calendar-container" ></div>
+
+          </div>
+
+          <div class="form-group row">
+            <label for="name" class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+                 <input class="form-control name" name="name"/>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="email" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+                 <input class="form-control email" name="email"/>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="date-field-start" class="col-sm-2 col-form-label">Start Date</label>
+            <div class="col-sm-10">
+                 <input class="form-control date-field-start" />
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="date-field-end" class="col-sm-2 col-form-label">End Date</label>
+            <div class="col-sm-10">
+                 <input class="form-control date-field-end" />
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="start-date" class="col-sm-2 col-form-label">Message</label>
+            <div class="col-sm-10">
+                 <textarea class="form-control"  rows="3" ></textarea>
+            </div>
+          </div>
+
+</form>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 
 @stop

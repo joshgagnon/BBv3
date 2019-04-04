@@ -34,34 +34,35 @@ class HomeController extends Controller {
         );
 
         // run the validation rules on the inputs from the form
-        $validator = Validator::make(Input::all(), $rules);
+        $validator = \Validator::make(\Input::all(), $rules);
 
         // if the validator fails, redirect back to the form
+        dd($validator->fails());
         if ($validator->fails()) {
-            return Redirect::to('login')
+            return \Redirect::to('login')
                 ->withErrors($validator) // send back all errors to the login form
-                ->withInput(Input::except('password')); // send back the input (not the password) so that we can repopulate the form
+                ->withInput(\Input::except('password')); // send back the input (not the password) so that we can repopulate the form
         } else {
 
             // create our user data for the authentication
             $userdata = array(
-                'email'     => Input::get('email'),
-                'password'  => Input::get('password')
+                'email'     => \Input::get('email'),
+                'password'  => \Input::get('password')
             );
 
             // attempt to do the login
-            if (Auth::attempt($userdata)) {
+            if (\Auth::attempt($userdata)) {
 
                 // validation successful!
                 // redirect them to the secure section or whatever
                 // return Redirect::to('secure');
                 // for now we'll just echo success (even though echoing in a controller is bad)
-                return Redirect::to('manage');
+                return \Redirect::to('manage');
 
             } else {
 
                 // validation not successful, send back to form
-                return Redirect::to('login');
+                return \Redirect::to('login');
 
             }
 
@@ -72,7 +73,7 @@ class HomeController extends Controller {
     public function showLogin()
     {
         // show the form
-        return View::make('login');
+        return \View::make('login');
     }
 
     public function doLogout()

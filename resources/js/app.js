@@ -1,9 +1,5 @@
 
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
+import Lightpick from 'lightpick';
 
 require('./bootstrap');
 
@@ -11,7 +7,7 @@ $(document).ready(function(){
 
 
     $('.carousel').on("slide.bs.carousel", function(e) {
-        var $tar = $(e.relatedTarget)
+        const $tar = $(e.relatedTarget)
         $tar.prev().add($tar.next()).add($tar).find('.bg-image[lazy-load-src]')
             .each(function(){
                 if($(this).is('img')){
@@ -22,7 +18,20 @@ $(document).ready(function(){
                 }
                 $(this).removeAttr('lazy-load-src');
             })
-
-
     });
+
+
+    $('.modal').on('shown.bs.modal', function(){
+
+        const picker = new Lightpick({ 
+            field: $(this).find('.date-field-start')[0], 
+            secondField: $(this).find('.date-field-end')[0], 
+            singleDate: false,
+            parentEl: '.calendar-container',
+            numberOfColumns: 2,
+            numberOfMonths: 2,
+            inline: true });
+    })
+
+
 })

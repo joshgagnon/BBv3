@@ -1,3 +1,4 @@
+@import '~lightpick/css/lightpick';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
@@ -467,4 +468,9 @@ p.quote {
 .nav-links a:hover{
     text-decoration: none;
         text-shadow: 1px 1px #ccc;
+}
+
+
+section.lightpick{
+    overflow-x:visible;
 }
