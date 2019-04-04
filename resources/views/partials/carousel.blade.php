@@ -10,7 +10,7 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
   @foreach($images as $image)
-      <div class="item {{{ $image == $images[0] ?  'active' : '' }}}">
+      <div class="carousel-item {{{ $image == $images[0] ?  'active' : '' }}}">
          @if($bg)
           <div class="bg-image" {{{ $image == $images[0] ?  'src' : 'lazy-load-src' }}}="{{ asset($image) }}"
             @if($image == $images[0])

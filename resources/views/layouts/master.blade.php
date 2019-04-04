@@ -12,7 +12,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<link rel="shortcut icon"   type="image/png" href="/favicon.png" />
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
-	<link href="{{ asset('css/style.css') }}" rel="stylesheet">
+	<link href="{{ asset('css/app.css') }}" rel="stylesheet">
  	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
@@ -50,7 +50,7 @@
 	</a>
 </div>
 <div class="copyright-info">
-		©Copyright 2016 Joshua Gagnon
+		©Copyright 2019 Joshua Gagnon
 </div>
 </div>
 </section>
