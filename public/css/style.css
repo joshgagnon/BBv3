@@ -1,0 +1,466 @@
+/*
+#ff921f
+#feb950
+#704700
+#8a773c
+
+*/
+
+
+html {
+    position: relative;
+    min-height: 100%;
+
+}
+body {
+
+    color: #595757;
+    padding-bottom: 180px;
+    background-color: #fafcfc;
+    font-family: 'Open Sans', sans-serif;
+  
+    font-size: 16px;
+    overflow-x:hidden;
+}
+
+section{
+	overflow-x:hidden;
+}
+section .container{
+	/*background-color: #FFFEF7;*/
+	padding-bottom:60px;
+}
+section .container.no-bg{
+    background-color: transparent;
+    padding-bottom:0
+}
+h2{
+	padding-bottom:20px;
+	text-align: center;
+	background-color: #acd;
+	padding: 20px;
+	color: white;
+	margin:0;
+	box-shadow: 0px 2px 0px #92AFBD;
+	-webkit-box-shadow: 0px 2px 0px #92AFBD;
+	-o-box-shadow: 0px 2px 0px #92AFBD;
+	-moz-box-shadow: 0px 2px 0px #92AFBD;
+  	position: relative;
+  	z-index: 10;
+  	text-shadow: 0px 2px 2px rgba(169, 169, 169, 1);
+}
+.container .col-lg-6 h2{
+	margin:0 -15px;
+}
+.header{
+
+	text-align: center;
+	min-height:500px;
+	padding-top:20px;
+}
+.header .carousel{
+	margin:-20px -15px 0 -15px;
+}
+.container .bg-image{
+    margin: 20px auto;
+}
+
+.header .bg-image{
+	height:100%;
+	width:100%;
+	background: url('') scroll center center / cover transparent;
+	min-height:500px;
+}
+
+p{
+	margin-top: 15px;
+    text-align: justify;
+}
+
+
+#links{
+	text-align: center;
+}
+#links > div{
+	display:inline-block;
+	margin:5px 8px;
+}
+#links img{
+	vertical-align: bottom;
+}
+img.association {
+  background-color: rgba(244, 244, 244, 0.9);
+  height: 100px;
+  border-radius:8px;
+}
+
+img.facebook {
+  height: 100px;
+}
+#CDSWIDFRR{
+	overflow: visible !important;
+	margin:0 !important;
+	top: -12px;
+}
+.TA_rated {
+    margin-top: 16px;
+}
+
+.header .logo {
+	max-width: 80%;
+	max-height: 200px;
+	position: absolute;
+	z-index: 10;
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	top: 80px;
+	background-color: rgba(244, 244, 244, 0.53);
+}
+section#bg-pic-1 {
+	height: 600px;
+	background-image: url(/images/landscape.jpg);
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+}
+section#bg-pic-2 {
+	height: 600px;
+	background-image: url(/images/IMG_3684.jpg);
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+}
+.footer{
+	text-align:center;
+	background-color: rgba(153, 159, 166, 1);
+    padding-top: 60px;
+    padding-bottom: 60px;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+.footer .container{
+	background-color:rgba(153, 159, 166, 1);
+	padding:0;
+}
+
+.footer a{
+  padding: 0 12px;
+  font-size: 16px;
+  color: rgb(247, 247, 247);
+}
+.footer .footer-links{
+    margin-bottom: 8px;
+}
+.footer .copyright-info{
+font-size: 12px;
+position:absolute;
+bottom:0;
+left:0;
+right:0;
+text-align:center;
+}
+.col-md-4 a:hover{
+	text-decoration: none;
+}
+.menu-box{
+	margin-bottom:40px;
+
+}
+.menu-box .text-box{
+padding: 20px;
+background-color: #E8E8E8;
+color: rgb(103, 103, 103);
+font-size: 22px;
+border-bottom-left-radius: 10px;
+border-bottom-right-radius: 10px;
+text-align: center;
+}
+
+.menu-box .image-box{
+	height:300px;
+	background-position:center center;
+	background-size:cover;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	cursor:pointer;
+}
+.home-box{
+	background-image: url('/images/house_opt/A41W0301.jpg');
+}
+.food-box{
+	background-image: url('/images/food_opt/1.jpg');
+}
+.room-box{
+	background-image:url('/images/rooms_opt/1.jpg') ;
+}
+.aboutus-box{
+	background-image: url('/images/hosts.jpg') ;
+}
+.thingstodo-box{
+	background-image: url('/images/thingstodo_opt/IMG_3658.jpg') ;
+}
+.location-box{
+	background-image: url('/images/location.jpg') ;
+}
+#main-menu .container{
+	padding-top:15px;
+	padding-bottom:10px;
+}
+
+ .datepicker table{
+	font-size:18px;
+}
+
+ .datepicker {
+	width:100%;
+}
+ .datepicker td{
+	border-radius:0;
+}
+ .datepicker .booked{
+	background-color: rgb(255, 97, 91) !important;
+	color: #FFF !important;
+}
+
+ .datepicker table td.active{
+	background-color:none;
+}
+
+
+
+@media only screen and (min-width : 1200px) {
+
+	#eco .pic{
+		text-align:left;
+	}
+	#todo .list{
+		text-align:left;
+	}
+	#todo .pic{
+		text-align:right;
+	}
+	#eco .list{
+		text-align:right;
+	}
+}
+
+
+.list li{
+    list-style:none;
+   padding-left: 1em; 
+    text-indent: -.7em;
+}
+.list li:before {
+    content: "•";
+    color: #92AFBD;
+    padding-right:7px
+}
+
+
+.fixed-link{
+    position: fixed;
+    z-index: 20;
+    right: 0;
+    top: 0;
+
+ background-color:#d43b3c;
+}
+.fixed-link *{
+    display: block;
+
+    height: auto;
+}
+body{
+    padding-top:59px;
+}
+#top{
+    text-align:center;
+}
+.logo{
+    max-width: 100%;
+}
+@media only screen and  (min-width : 400px) {
+    body{
+        padding-top:0;
+    }
+    .fixed-link{
+        left: auto;
+        top: 10px;
+        right:10px;
+    }
+    .logo{
+
+        padding-top:75px;
+        margin: 0 auto;
+    }
+
+}
+@media only screen and  (min-width : 790px) {
+    .logo{
+        padding-top:0;
+    }
+    #top{
+        text-align: left;
+    }
+    .nav-links a{
+        font-size:18px;
+    }
+}
+
+
+@media only screen and  (min-width : 1300px) {
+    #top{
+        height: 140px;
+        overflow-y:hidden;
+    }
+    .nav-links a{
+        font-size:20px;
+    }
+    .logo{
+        position: absolute;
+    }
+    .nav-links{
+            max-width:800px;
+    }
+    #links > div{
+        margin:5px 28px;
+    }
+}
+
+
+#intro{
+	background-color: #acd;
+	padding: 12px;
+		color:white;
+	font-size:20px;
+	text-align:center;
+	box-shadow: 0px 2px 0px #92AFBD;
+	-webkit-box-shadow: 0px 2px 0px #92AFBD;
+	-o-box-shadow: 0px 2px 0px #92AFBD;
+	-moz-box-shadow: 0px 2px 0px #92AFBD;
+	position: relative;
+}
+
+.container .carousel{
+	  margin-top: 2px;
+}
+
+.carousel-fade .carousel-inner .item {
+  opacity: 0;
+  transition-property: opacity;
+}
+
+.carousel-fade .carousel-inner .active {
+  opacity: 1;
+}
+
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+}
+
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+  opacity: 1;
+}
+
+.carousel-fade .carousel-control {
+  z-index: 2;
+}
+
+#BookItCalendar {
+  height: 175px !important;
+  overflow: hidden;
+  scroll: none;
+  margin-top: 20px;
+}
+#googleMap{
+	margin-top: 10px;
+}
+.bgh{
+position: absolute;
+  left: -2000px;
+  right: -2000px;
+  z-index: 0;
+}
+/*
+  WHAT IS NEW IN 3.3: "Added transforms to improve carousel performance in modern browsers."
+  Need to override the 3.3 new styles for modern browsers & apply opacity
+*/
+@media all and (transform-3d), (-webkit-transform-3d) {
+    .carousel-fade .carousel-inner > .item.next,
+    .carousel-fade .carousel-inner > .item.active.right {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+    }
+    .carousel-fade .carousel-inner > .item.prev,
+    .carousel-fade .carousel-inner > .item.active.left {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+    }
+    .carousel-fade .carousel-inner > .item.next.left,
+    .carousel-fade .carousel-inner > .item.prev.right,
+    .carousel-fade .carousel-inner > .item.active {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+    }
+}
+
+#quotes .container{
+    padding-bottom: 10px;
+}
+p.quote {
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom:0;
+}
+.quote-attribution{
+    width:  100%;
+    font-style:italic;
+    text-align: right;
+    display:inline-block;
+    padding-right:25%
+}
+
+.bright p.quote{
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px #000
+}
+.bright .quote-attribution{
+    color:white;
+    text-shadow: 2px 2px #000
+}
+
+.quote-overlay .quote{
+    margin-top: 20%;
+}
+
+
+.nav-links{
+    float:right;
+    height:100%;
+    display:table;
+    text-align: center;
+    width:100%;
+}
+
+.nav-links a{
+    padding:4px 4px;
+    display:table-cell;
+    vertical-align: bottom;
+    color:#333;
+}
+.nav-links a:hover{
+    text-decoration: none;
+        text-shadow: 1px 1px #ccc;
+}
