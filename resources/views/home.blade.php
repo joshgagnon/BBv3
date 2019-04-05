@@ -473,60 +473,84 @@ New Zealand
       <div class="modal-body">
            
 
-        <form>
-
-          <div class="form-group row">
+        <form method="post" id="request-form" action="inquiry" class="needs-validation">
+            @csrf
+          <div class="form-row mb-3">
+          
            <div class="calendar-container" ></div>
 
           </div>
 
-          <div class="form-group row">
-            <label for="name" class="col-sm-2 col-form-label">Name</label>
-            <div class="col-sm-10">
-                 <input class="form-control name" name="name"/>
+          <div class="form-row">
+
+            <div class="col">
+                    <div class="form-group">
+                 <input class="form-control name" name="name" placeholder="Name" required/>
+                     <div class="invalid-feedback">Required</div>
+            </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                 <input class="form-control email" name="email" placeholder="Email" required/>
+                 <div class="invalid-feedback">Required</div>
+             </div>
             </div>
           </div>
 
-          <div class="form-group row">
-            <label for="email" class="col-sm-2 col-form-label">Email</label>
-            <div class="col-sm-10">
-                 <input class="form-control email" name="email"/>
+
+          <div class="form-row mb-3">
+            <div class="col">
+                 <input class="form-control date-field-start" name="datestart" placeholder="Start Date"/>
+            </div>
+
+            <div class="col">
+                 <input class="form-control date-field-end" name="dateend" placeholder="End Date" />
             </div>
           </div>
 
-          <div class="form-group row">
-            <label for="date-field-start" class="col-sm-2 col-form-label">Start Date</label>
-            <div class="col-sm-10">
-                 <input class="form-control date-field-start" />
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="date-field-end" class="col-sm-2 col-form-label">End Date</label>
-            <div class="col-sm-10">
-                 <input class="form-control date-field-end" />
+
+          <div class="form-row">
+            <div class="col">
+                 <textarea class="form-control"  rows="3" name="messagetext" placeholder="Message"></textarea>
             </div>
           </div>
 
-          <div class="form-group row">
-            <label for="start-date" class="col-sm-2 col-form-label">Message</label>
-            <div class="col-sm-10">
-                 <textarea class="form-control"  rows="3" ></textarea>
-            </div>
-          </div>
-
-</form>
+        </form>
 
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Ok</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary submit-request">Send Request</button>
       </div>
     </div>
   </div>
 </div>
 
 
+
+<div class="modal fade" id="confirmation-modal" tabindex="-1" role="dialog" aria-labelledby="confirmation-modal" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Request Sent</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+    <div class="alert alert-success" role="alert">
+    <h4 class="alert-heading">Thank you!</h4>
+           A request for availability has been sent to the hosts.  They will respond via email very soon.
+       </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 @stop

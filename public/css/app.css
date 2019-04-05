@@ -11462,7 +11462,49 @@ p.quote {
   text-shadow: 1px 1px #ccc;
 }
 
-section.lightpick {
+.calendar-container {
+  margin: 0 auto;
+}
+
+.calendar-container section.lightpick {
   overflow-x: visible;
+}
+
+.calendar-container .lightpick__day {
+  position: relative;
+  z-index: 2;
+  font-size: 16px;
+}
+
+.calendar-container .lightpick__tooltip {
+  background-color: white;
+  z-index: 3;
+}
+
+.calendar-container .red-room::after,
+.calendar-container .green-room::after {
+  content: "";
+  z-index: -1;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  left: 6px;
+  right: 6px;
+}
+
+.calendar-container .red-room::after {
+  background-color: red;
+  background: linear-gradient(to bottom right, red 0%, red 50%, transparent 50%, transparent 100%);
+}
+
+.calendar-container .green-room::after {
+  background-color: lime;
+  background: linear-gradient(to top left, lime 0%, lime 50%, transparent 50%, transparent 100%);
+}
+
+.calendar-container .red-room.green-room::after {
+  background: linear-gradient(to bottom right, red 0%, red 50%, lime 50%, lime 100%);
 }
 

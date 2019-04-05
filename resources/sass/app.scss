@@ -471,6 +471,51 @@ p.quote {
 }
 
 
-section.lightpick{
-    overflow-x:visible;
+
+
+.calendar-container {
+margin: 0 auto;
+    section.lightpick{
+        overflow-x:visible;
+    }
+    .lightpick__day{
+        position: relative;
+            z-index: 2;
+            font-size:16px;
+    }
+.lightpick__tooltip {
+    background-color: white;
+    z-index: 3;
+}
+
+    $red-room: rgba(255, 0, 0, 1);
+    $green-room: rgba(0, 255, 0,1);
+    $room-margin:6px;
+    .red-room::after, .green-room::after{
+        content:'';
+            z-index: -1;
+        border-radius: 50%;
+        display:block;
+        position:absolute; 
+         top:$room-margin;    
+         bottom:$room-margin;    
+         left:$room-margin;    
+         right:$room-margin;    
+    }
+
+    .red-room::after {
+
+        background-color: $red-room;
+        background: linear-gradient(to bottom right, $red-room 0%, $red-room 50%, transparent 50%,transparent 100%);
+
+    }
+    .green-room::after {
+        background-color: $green-room;
+        background: linear-gradient(to top left, $green-room 0%, $green-room 50%, transparent 50%,transparent 100%);
+    }
+
+    .red-room.green-room::after {
+        background: linear-gradient(to bottom right, $red-room 0%, $red-room 50%, $green-room 50%, $green-room 100%);
+    }
+
 }

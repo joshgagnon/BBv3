@@ -10,8 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use Illuminate\Http\Request;
 
 Route::get('/', 'HomeController@show');
+Route::post('/inquiry', 'HomeController@inquiry');
+
 Route::get('/manage', function(){
     return View::make('manage');
 });
@@ -48,4 +51,9 @@ Route::group(['middleware' => ['auth']], function() {
         return Response::json(array('success' => true));
 
     });
+});
+
+
+Route::get('/inquiry-preview', function(Request $request) {
+    return new App\Mail\Inquiry($request->all());
 });

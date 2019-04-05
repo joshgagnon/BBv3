@@ -16698,6 +16698,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
         onOpen: null,
         onClose: null,
         onError: null,
+        dayClasses: null
     },
 
     renderTopButtons = function(opts)
@@ -16727,6 +16728,10 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
             time: moment(date).valueOf(),
             className: ['lightpick__day', 'is-available']
         };
+
+        if(opts.dayClasses && typeof opts.dayClasses === "function") {
+            day.className = day.className.concat(opts.dayClasses(day) || []);
+        }
 
         if (extraClass instanceof Array || Object.prototype.toString.call(extraClass) === '[object Array]') {
             extraClass = extraClass.filter( function( el ) {
@@ -55494,8 +55499,8 @@ module.exports = function(module) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var lightpick__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lightpick */ "./node_modules/lightpick/lightpick.js");
-/* harmony import */ var lightpick__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lightpick__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var lightpick__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lightpick */ "./node_modules/lightpick/lightpick.js");
+/* harmony import */ var lightpick__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lightpick__WEBPACK_IMPORTED_MODULE_1__);
 
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
@@ -55512,18 +55517,46 @@ $(document).ready(function () {
 
       $(this).removeAttr('lazy-load-src');
     });
+  }); // $('.modal').on('shown.bs.modal', function(){
+
+  var picker = new lightpick__WEBPACK_IMPORTED_MODULE_1___default.a({
+    field: $(this).find('.date-field-start')[0],
+    secondField: $(this).find('.date-field-end')[0],
+    singleDate: false,
+    parentEl: '.calendar-container',
+    numberOfColumns: 2,
+    numberOfMonths: 2,
+    inline: true,
+    dayClasses: function dayClasses(day) {
+      return ['red-room', 'green-room'].filter(function () {
+        return Math.random() > 0.5;
+      });
+    }
   });
-  $('.modal').on('shown.bs.modal', function () {
-    var picker = new lightpick__WEBPACK_IMPORTED_MODULE_0___default.a({
-      field: $(this).find('.date-field-start')[0],
-      secondField: $(this).find('.date-field-end')[0],
-      singleDate: false,
-      parentEl: '.calendar-container',
-      numberOfColumns: 2,
-      numberOfMonths: 2,
-      inline: true
+  $('.submit-request').on('click', function () {
+    $('#request-form').submit();
+  });
+  $('#request-form').on('submit', function (e) {
+    e.preventDefault();
+
+    if (!e.target.checkValidity()) {
+      $(this).addClass('was-validated');
+      return false;
+    }
+
+    $('#calendar-modal').modal('hide');
+    $.ajax({
+      type: $(this).attr('method'),
+      url: $(this).attr('action'),
+      data: $(this).serialize() // serializes the form's elements.
+
+    }).then(function () {
+      $('#confirmation-modal').modal('show');
+    })["catch"](function () {
+      $('#confirmation-modal').modal('show');
     });
-  });
+    return true;
+  }); // })
 });
 
 /***/ }),
