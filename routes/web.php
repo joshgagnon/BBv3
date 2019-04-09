@@ -15,13 +15,13 @@ use App\Booking;
 
 
 Route::get('/', 'HomeController@show');
-Route::post('/inquiry', 'HomeController@inquiry');
+Route::post('inquiry', 'HomeController@inquiry');
 
 
 Auth::routes();
-Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
-Route::get('/availability', function()
+Route::get('availability', function()
 {
     return Response::json(Booking::all());
 
@@ -29,10 +29,10 @@ Route::get('/availability', function()
 
 
 Route::group(['middleware' => ['auth']], function() {
-    Route::get('/manage', function(){
+    Route::get('manage', function(){
         return View::make('manage');
     });
-    Route::post('/change-availability', function(Request $request)
+    Route::post('change-availability', function(Request $request)
     {
         $fields = $request->all();
         $booking = Booking::firstOrNew(['date_string' => $fields['date']]);
@@ -55,9 +55,8 @@ Route::group(['middleware' => ['auth']], function() {
         }
         return Response::json(array('success' => true));
     });
+    Route::get('inquiry-preview', function(Request $request) {
+        return new App\Mail\Inquiry($request->all());
+    });
 });
 
-
-Route::get('/inquiry-preview', function(Request $request) {
-    return new App\Mail\Inquiry($request->all());
-});
