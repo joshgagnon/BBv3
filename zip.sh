@@ -1,0 +1,1 @@
+zip ../laravel-v2-rds.zip -r * .[^.]* -x "vendor/*" -x ".env"
