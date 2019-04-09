@@ -4,7 +4,7 @@
 @stop
 @section('content')
 
-<section id="top">
+<section id="top" class="home-page">
     <img class="logo" src="{{ asset('images/bb3.png') }}" alt="Redvale Ridge B&B" />
 
 
@@ -23,6 +23,12 @@ Rooms & Rates
     Bookings
     </a>
 
+</div>
+
+<div class="booking-wrapper">
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#calendar-modal">
+  Check Availability!
+</button>
 </div>
 
 
@@ -433,12 +439,13 @@ our local area and further afield. We love music and go to concerts when we can.
 </div>
 
 <div class="col-md-6">
-    <p />
-<div id="SMART-widget-container"><a target="_blank" href="https://smartgms.com/book/smartcal?cid=88303"><img src="https://smartgms.com/site/templates/img/smartres/buttons/button06.png" width="144" height="40" alt="Availability and Book Now"></a></div>
+    <p/>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#calendar-modal">
+  Check Availability!
+</button>
+
 <div>
 
-
-<p>- Or book directly using the contact details below -</p>
 <p><strong>Phone</strong> <a href="tel:+64224566478">+64 224 566 478</a></p>
 <p><strong>Email</strong> <a href="mailto:redvaleridge@gmail.com">redvaleridge@gmail.com</a></p>
 <p><strong>Address</strong><br/>
@@ -457,9 +464,7 @@ New Zealand
 </div>
 </section>
 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#calendar-modal">
-  Book
-</button>
+
 
 <div class="modal fade" id="calendar-modal" tabindex="-1" role="dialog" aria-labelledby="calendar-modal" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
@@ -477,9 +482,15 @@ New Zealand
             @csrf
           <div class="form-row mb-3">
           
-           <div class="calendar-container" ></div>
+           <div class="calendar-container" >
+               
+
+           </div>
 
           </div>
+
+           <p class="text-center">Colours represent availability of the Red and Green rooms.</p>
+
 
           <div class="form-row">
 
@@ -543,6 +554,32 @@ New Zealand
     <div class="alert alert-success" role="alert">
     <h4 class="alert-heading">Thank you!</h4>
            A request for availability has been sent to the hosts.  They will respond via email very soon.
+       </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="modal fade" id="failure-modal" tabindex="-1" role="dialog" aria-labelledby="failure-modal" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Request Failure</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+    <div class="alert alert-warning" role="alert">
+    <h4 class="alert-heading">Failed to Send Request</h4>
+        Please try contacting the hosts directly @ <a href="mailto:redvaleridge@gmail.com">redvaleridge@gmail.com</a>
        </div>
       </div>
       <div class="modal-footer">

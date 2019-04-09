@@ -11508,3 +11508,9 @@ p.quote {
   background: linear-gradient(to bottom right, red 0%, red 50%, lime 50%, lime 100%);
 }
 
+.booking-wrapper {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+

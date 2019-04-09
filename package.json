@@ -23,6 +23,6 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
-        "lightpick": "^1.3.4"
+        "lightpick": "github:joshgagnon/Lightpick"
     }
 }

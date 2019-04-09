@@ -11,45 +11,49 @@
 |
 */
 use Illuminate\Http\Request;
+use App\Booking;
+
 
 Route::get('/', 'HomeController@show');
 Route::post('/inquiry', 'HomeController@inquiry');
 
-Route::get('/manage', function(){
-    return View::make('manage');
-});
 
 Auth::routes();
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
-
-Route::get('dates', function()
+Route::get('/availability', function()
 {
-    return Response::json(DB::table('bookings')->get());
+    return Response::json(Booking::all());
 
 });
 
 
 Route::group(['middleware' => ['auth']], function() {
-    Route::post('dates', function()
+    Route::get('/manage', function(){
+        return View::make('manage');
+    });
+    Route::post('/change-availability', function(Request $request)
     {
-        $date = new \DateTime;
-        if(Input::has('book')){
-            $bookings = Input::get('book');
-
-            DB::table('bookings')->whereIn('date_string', $bookings)->delete();
-            $data = array();
-            foreach($bookings as $b){
-                array_push($data, array('date_string' => $b, 'created_at' => $date, 'updated_at' => $date));
-            }
-            DB::table('bookings')->insert($data);
-            
+        $fields = $request->all();
+        $booking = Booking::firstOrNew(['date_string' => $fields['date']]);
+        if(!$booking->rooms_booked) {
+            $booking->rooms_booked = [];
         }
-        if(Input::has('unbook')){
-            DB::table('bookings')->whereIn('date_string', Input::get('unbook'))->delete();
+        $rooms_booked = $booking->rooms_booked;
+        if($fields['available']) {
+            $rooms_booked = array_filter($rooms_booked, function($v) use ($fields) { return $v != $fields['name'];});
         }
-        DB::commit();
+        else {
+            $rooms_booked[] = $fields['name'];
+        }
+        $booking->rooms_booked = array_values($rooms_booked);
+        if(count($booking->rooms_booked)) {
+            $booking->save();
+        }
+        else{
+            $booking->delete();
+        }
         return Response::json(array('success' => true));
-
     });
 });
 

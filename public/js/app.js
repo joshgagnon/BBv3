@@ -16730,7 +16730,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
         };
 
         if(opts.dayClasses && typeof opts.dayClasses === "function") {
-            day.className = day.className.concat(opts.dayClasses(day) || []);
+            day.className = day.className.concat(opts.dayClasses(date) || []);
         }
 
         if (extraClass instanceof Array || Object.prototype.toString.call(extraClass) === '[object Array]') {
@@ -55499,13 +55499,61 @@ module.exports = function(module) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var lightpick__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lightpick */ "./node_modules/lightpick/lightpick.js");
-/* harmony import */ var lightpick__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lightpick__WEBPACK_IMPORTED_MODULE_1__);
-
-
+/* harmony import */ var lightpick__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lightpick */ "./node_modules/lightpick/lightpick.js");
+/* harmony import */ var lightpick__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lightpick__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-$(document).ready(function () {
+
+
+axios__WEBPACK_IMPORTED_MODULE_1___default.a.defaults.headers.common = {
+  'X-Requested-With': 'XMLHttpRequest',
+  'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+};
+var _booked = {};
+var format = 'DD/MM/YYYY';
+
+var availabilty = function availabilty(date, room) {
+  return !(_booked[date] || []).includes(room);
+};
+
+var availabilityToClasses = function availabilityToClasses(date) {
+  date = date.format(format);
+  return ['red-room', 'green-room'].filter(function (room) {
+    return !(_booked[date] || []).includes(room);
+  });
+};
+
+var updateAvailabilty = function updateAvailabilty(date, name, available, calendar) {
+  if (available) {
+    _booked[date] = (_booked[date] || []).filter(function (room) {
+      return room !== name;
+    });
+  } else {
+    _booked[date] = _booked[date] || [];
+
+    _booked[date].push(name);
+  }
+
+  calendar.setDisableDates();
+  return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('/change-availability', {
+    date: date,
+    name: name,
+    available: available
+  });
+};
+
+var getAvailabilty = function getAvailabilty() {
+  return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/availability').then(function (response) {
+    _booked = response.data.reduce(function (acc, date) {
+      acc[date.date_string] = date.rooms_booked;
+      return acc;
+    }, {});
+  });
+};
+
+window.homeJS = function () {
   $('.carousel').on("slide.bs.carousel", function (e) {
     var $tar = $(e.relatedTarget);
     $tar.prev().add($tar.next()).add($tar).find('.bg-image[lazy-load-src]').each(function () {
@@ -55517,21 +55565,18 @@ $(document).ready(function () {
 
       $(this).removeAttr('lazy-load-src');
     });
-  }); // $('.modal').on('shown.bs.modal', function(){
-
-  var picker = new lightpick__WEBPACK_IMPORTED_MODULE_1___default.a({
-    field: $(this).find('.date-field-start')[0],
-    secondField: $(this).find('.date-field-end')[0],
-    singleDate: false,
-    parentEl: '.calendar-container',
-    numberOfColumns: 2,
-    numberOfMonths: 2,
-    inline: true,
-    dayClasses: function dayClasses(day) {
-      return ['red-room', 'green-room'].filter(function () {
-        return Math.random() > 0.5;
-      });
-    }
+  });
+  getAvailabilty().then(function () {
+    var picker = new lightpick__WEBPACK_IMPORTED_MODULE_0___default.a({
+      field: $('.date-field-start')[0],
+      secondField: $('.date-field-end')[0],
+      singleDate: false,
+      parentEl: '.calendar-container',
+      numberOfColumns: 2,
+      numberOfMonths: 2,
+      inline: true,
+      dayClasses: availabilityToClasses
+    });
   });
   $('.submit-request').on('click', function () {
     $('#request-form').submit();
@@ -55553,10 +55598,46 @@ $(document).ready(function () {
     }).then(function () {
       $('#confirmation-modal').modal('show');
     })["catch"](function () {
-      $('#confirmation-modal').modal('show');
+      $('#failure-modal').modal('show');
     });
     return true;
-  }); // })
+  });
+};
+
+window.manageJS = function () {
+  var _calendar;
+
+  getAvailabilty().then(function () {
+    _calendar = new lightpick__WEBPACK_IMPORTED_MODULE_0___default.a({
+      parentEl: '.calendar-container',
+      field: $('.calendar-date-field')[0],
+      numberOfColumns: 3,
+      numberOfMonths: 6,
+      inline: true,
+      dayClasses: availabilityToClasses,
+      onSelect: function onSelect(value) {
+        if (value) {
+          $('.room-availability').removeAttr('disabled');
+        }
+
+        $('#red-room').prop('checked', availabilty(value, 'red-room'));
+        $('#green-room').prop('checked', availabilty(value, 'green-room'));
+      }
+    });
+  });
+  $('.room-availability').on('change', function () {
+    updateAvailabilty($('.calendar-date-field').val(), $(this).prop('name'), $(this).prop('checked'), _calendar);
+  });
+};
+
+$(document).ready(function () {
+  if ($('.home-page').length) {
+    homeJS();
+  }
+
+  if ($('.manage-page').length) {
+    manageJS();
+  }
 });
 
 /***/ }),

@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'driver' => env('MAIL_DRIVER', 'smtp'),
+    'driver' => 'mailgun',
 
     /*
     |--------------------------------------------------------------------------
@@ -60,11 +60,6 @@ return [
         'name' => env('MAIL_FROM_NAME', 'Example'),
     ],
 
-
-    'mailgun' => [
-        'domain' => env('MAIL_GUN_DOMAIN', 'your-mailgun-domain'),
-        'secret' =>  env('MAIL_GUN_SECRET', 'your-mailgun-key'),
-    ],
 
     /*
     |--------------------------------------------------------------------------
