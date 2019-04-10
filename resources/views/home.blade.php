@@ -435,7 +435,7 @@ our local area and further afield. We love music and go to concerts when we can.
 <div class="container">
 <div class="row">
 <div class="col-md-6">
-<iframe src="https://www.google.com/maps/embed/v1/place?q=redvale%20ridge%20b%26b%20richmond&key=AIzaSyBcUlrIphw6eoWvKt_Ln7vEeeJkhgg-iL8"width="100%" height="450" frameborder="0" style="border:0" id="googleMap"></iframe>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2997.6950607823537!2d173.06920751570888!3d-41.29374067927292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d3b9a0ce77f07d1%3A0xff8714b6b2d46ae7!2sRedvale+Ridge+B%26B!5e0!3m2!1sen!2sau!4v1554866058674!5m2!1sen!2sau" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 </div>
 
 <div class="col-md-6">
