@@ -472,51 +472,67 @@ p.quote {
 
 
 
+$day-width: 60px;
+$month-width: $day-width*7+8;
+$day-height: $day-width;
 
+.lightpick__day.is-today {
+    background-position: center 10px;
+}
+.lightpick__day.is-today:hover, .lightpick__day.is-start-date, .lightpick__day.is-end-date, .lightpick__day.is-start-date:hover, .lightpick__day.is-end-date:hover {
+    background-position: center;
+}
 .calendar-container {
 margin: 0 auto;
     section.lightpick{
         overflow-x:visible;
     }
+
+.lightpick__month {
+    padding: 4px;
+    width: $month-width;
+    background-color: #FFF;
+}
+
+
     .lightpick__day{
         position: relative;
-            z-index: 2;
-            font-size:16px;
+    z-index: 2;
+      font-size: 18px;
+    height: $day-height;
+    padding: 20px;
+
     }
 .lightpick__tooltip {
     background-color: white;
     z-index: 3;
 }
+ $red-room: #cc0000;
+$green-room:#55e234;
 
-    $red-room: rgba(255, 0, 0, 1);
-    $green-room: rgba(0, 255, 0,1);
-    $room-margin:6px;
-    .red-room::after, .green-room::after{
-        content:'';
-            z-index: -1;
-        border-radius: 50%;
-        display:block;
-        position:absolute; 
-         top:$room-margin;    
-         bottom:$room-margin;    
-         left:$room-margin;    
-         right:$room-margin;    
-    }
+.red-room-icon, .green-room-icon {
+    position: absolute;
+    bottom:4px;
+    font-size:12px;
+    pointer-events:none;
+}
 
-    .red-room::after {
+.red-room-icon {
+    color: $red-room;
+    left:12px;
+}
 
-        background-color: $red-room;
-        background: linear-gradient(to bottom right, $red-room 0%, $red-room 50%, transparent 50%,transparent 100%);
 
-    }
-    .green-room::after {
-        background-color: $green-room;
-        background: linear-gradient(to top left, $green-room 0%, $green-room 50%, transparent 50%,transparent 100%);
-    }
+.green-room-icon {
+    color: $green-room;
+    right: 12px;
+}
 
-    .red-room.green-room::after {
-        background: linear-gradient(to bottom right, $red-room 0%, $red-room 50%, $green-room 50%, $green-room 100%);
-    }
+.lightpick__previous-action, .lightpick__next-action {
+    font-size: 22px;
+    line-height: 22px;
+}
+
 
 }
 

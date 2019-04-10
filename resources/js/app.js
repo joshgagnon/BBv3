@@ -10,7 +10,7 @@ axios.defaults.headers.common = {
 let _booked = {};
 const format = 'DD/MM/YYYY';
 
-const availabilty = (date, room) => {
+const availability = (date, room) => {
     return !(_booked[date] || []).includes(room);
 }
 
@@ -21,7 +21,7 @@ const availabilityToClasses = (date) => {
 
 }
 
-const updateAvailabilty = (date, name, available, calendar) => {
+const updateAvailability = (date, name, available, calendar) => {
     if(available) {
          _booked[date] =  (_booked[date] || []).filter(room => room !== name);
 
@@ -36,7 +36,7 @@ const updateAvailabilty = (date, name, available, calendar) => {
     });
 }
 
-const getAvailabilty = () => {
+const getAvailability = () => {
     return axios.get('/availability')
         .then(response => {
             _booked = response.data.reduce((acc, date) => {
@@ -46,6 +46,19 @@ const getAvailabilty = () => {
         })
 }
 
+const dayMutator = (div, date) => {
+    date = date.format(format);
+
+    const red = availability(date, 'red-room');
+    const green = availability(date, 'green-room');
+    if(red) {
+        $(div).append('<div class="red-room-icon"><i class="fas fa-bed"></i></div>')
+    }
+    if(green) {
+        $(div).append('<div class="green-room-icon"><i class="fas fa-bed"></i></div>')
+    }
+    return div; 
+}
 
 window.homeJS = function(){
    
@@ -65,17 +78,18 @@ window.homeJS = function(){
     });
 
 
-    getAvailabilty()
+    getAvailability()
         .then(() => {
         const picker = new Lightpick({ 
             field: $('.date-field-start')[0], 
             secondField: $('.date-field-end')[0], 
             singleDate: false,
             parentEl: '.calendar-container',
-            numberOfColumns: 2,
-            numberOfMonths: 2,
+            numberOfColumns: 1,
+            numberOfMonths: 1,
             inline: true,
-            dayClasses: availabilityToClasses
+            dayClasses: availabilityToClasses,
+            dayMutator: dayMutator
         });
     });
 
@@ -113,28 +127,29 @@ window.homeJS = function(){
 
 window.manageJS = function() {
     let _calendar;
-    getAvailabilty()
+    getAvailability()
         .then(() => {
             _calendar = new Lightpick({ 
                 parentEl: '.calendar-container',
                 field: $('.calendar-date-field')[0],
-                numberOfColumns: 3,
-                numberOfMonths: 6,
+                numberOfColumns:2,
+                numberOfMonths: 4,
                 inline: true,
                 dayClasses: availabilityToClasses,
+                dayMutator: dayMutator,
                 onSelect: (value) => {
                     if(value) {
                         $('.room-availability').removeAttr('disabled');
                     }
-                    $('#red-room').prop('checked', availabilty(value, 'red-room'));
-                    $('#green-room').prop('checked',availabilty(value, 'green-room'))
+                    $('#red-room').prop('checked', availability(value, 'red-room'));
+                    $('#green-room').prop('checked',availability(value, 'green-room'))
                 }
             });
 
         });
 
     $('.room-availability').on('change', function() {
-        updateAvailabilty($('.calendar-date-field').val(), $(this).prop('name'), $(this).prop('checked'), _calendar);
+        updateAvailability($('.calendar-date-field').val(), $(this).prop('name'), $(this).prop('checked'), _calendar);
     });
 }
 

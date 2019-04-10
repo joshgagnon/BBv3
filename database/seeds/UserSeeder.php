@@ -11,9 +11,9 @@ class UserSeeder extends Seeder
     {
         DB::table('users')->delete();
         \App\User::create(array(
-            'email'    => 'b.grant@xtra.co.nz',
+            'email'    => env('ADMIN_USERNAME', 'redvaleridge@gmail.com'),
             'name' => 'Barbara',
-            'password' => bcrypt('bookings'),
+            'password' => bcrypt(env('ADMIN_PASSWORD', 'bookings')),
         ));
     }
 

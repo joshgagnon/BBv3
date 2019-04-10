@@ -26,8 +26,8 @@ Rooms & Rates
 </div>
 
 <div class="booking-wrapper">
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#calendar-modal">
-  Check Availability!
+<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#calendar-modal">
+Check availability &amp; make a booking
 </button>
 </div>
 
@@ -256,7 +256,7 @@ of the section contains mostly native shrubs, trees and grasses.</p>
 </p>
 <p>
 <strong><em>Rates</em></strong><br/>
-$205 - $250 per night.<br/>
+$230 - $250 per night.<br/>
 </p>
 
 
@@ -489,7 +489,7 @@ New Zealand
 
           </div>
 
-           <p class="text-center">Colours represent availability of the Red and Green rooms.</p>
+           <p class="text-center">Beds represent availability of the Red and Green rooms.</p>
 
 
           <div class="form-row">

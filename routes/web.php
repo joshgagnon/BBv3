@@ -39,11 +39,8 @@ Route::group(['middleware' => ['auth']], function() {
         if(!$booking->rooms_booked) {
             $booking->rooms_booked = [];
         }
-        $rooms_booked = $booking->rooms_booked;
-        if($fields['available']) {
-            $rooms_booked = array_filter($rooms_booked, function($v) use ($fields) { return $v != $fields['name'];});
-        }
-        else {
+        $rooms_booked = array_filter($booking->rooms_booked, function($v) use ($fields) { return $v != $fields['name'];});
+        if(!$fields['available']) {
             $rooms_booked[] = $fields['name'];
         }
         $booking->rooms_booked = array_values($rooms_booked);
