@@ -141,6 +141,7 @@ window.manageJS = function() {
                     if(value) {
                         $('.room-availability').removeAttr('disabled');
                     }
+                    value = value.format(format);
                     $('#red-room').prop('checked', availability(value, 'red-room'));
                     $('#green-room').prop('checked',availability(value, 'green-room'))
                 }

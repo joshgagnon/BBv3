@@ -490,17 +490,21 @@ margin: 0 auto;
 
 .lightpick__month {
     padding: 4px;
-    width: $month-width;
     background-color: #FFF;
+    @include media-breakpoint-up(md) { 
+        width: $month-width;
+    }
 }
 
 
     .lightpick__day{
         position: relative;
     z-index: 2;
+    @include media-breakpoint-up(md) { 
       font-size: 18px;
-    height: $day-height;
     padding: 20px;
+        height: $day-height;
+    }
 
     }
 .lightpick__tooltip {
@@ -512,20 +516,32 @@ $green-room:#55e234;
 
 .red-room-icon, .green-room-icon {
     position: absolute;
-    bottom:4px;
-    font-size:12px;
+    bottom:0px;
+    font-size:9px;
+    @include media-breakpoint-up(md) { 
+        bottom:4px;
+        font-size:12px;
+
+    }
+    
     pointer-events:none;
 }
 
 .red-room-icon {
     color: $red-room;
-    left:12px;
+    left:7px;
+    @include media-breakpoint-up(md) { 
+        left:12px;
+    }
 }
 
 
 .green-room-icon {
     color: $green-room;
-    right: 12px;
+    right:7px;
+    @include media-breakpoint-up(md) { 
+        right: 12px;
+    }
 }
 
 .lightpick__previous-action, .lightpick__next-action {
