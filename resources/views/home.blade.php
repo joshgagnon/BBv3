@@ -110,9 +110,9 @@ loadjscssfile('https://media.datahc.com/ratinghotel/stellar2/styles.css?v' + ran
 		</div> -->
 
 
-<div style="zoom: 0.7;" id="TA_certificateOfExcellence438" class="TA_certificateOfExcellence"><ul id="sOEnGP2" class="TA_links SLE3djcIzL8"><li id="13ubKiW" class="rWj2hpDKUkF"><a target="_blank" href="https://www.tripadvisor.co.nz/Hotel_Review-g8099604-d7986014-Reviews-Redvale_Ridge_B_B-Redwood_Valley_Nelson_Tasman_Region_South_Island.html"><img src="https://www.tripadvisor.co.nz/img/cdsi/img2/awards/CoE2017_WidgetAsset-14348-2.png" alt="TripAdvisor" class="widCOEImg" id="CDSWIDCOELOGO"/></a></li></ul></div><script async src="https://www.jscache.com/wejs?wtype=certificateOfExcellence&amp;uniq=438&amp;locationId=7986014&amp;lang=en_NZ&amp;year=2017&amp;display_version=2"></script>
 
-	</div>
+
+<div style="zoom: 0.7;" id="TA_certificateOfExcellence977" class="TA_certificateOfExcellence"><ul id="o3tsAfq" class="TA_links dDaWEI7aS"><li id="8dyklGiPEb7" class="941Hz5KnJ"><a target="_blank" href="https://www.tripadvisor.co.nz/Hotel_Review-g8099604-d7986014-Reviews-Redvale_Ridge_B_B-Redwood_Valley_Nelson_Tasman_Region_South_Island.html"><img src="https://www.tripadvisor.co.nz/img/cdsi/img2/awards/CoE2017_WidgetAsset-14348-2.png" alt="TripAdvisor" class="widCOEImg" id="CDSWIDCOELOGO"/></a></li></ul></div><script async src="https://www.jscache.com/wejs?wtype=certificateOfExcellence&amp;uniq=977&amp;locationId=7986014&amp;lang=en_NZ&amp;year=2018&amp;display_version=2" data-loadtrk onload="this.loadtrk=true"></script>
 
 
 </div>
@@ -398,8 +398,7 @@ Children by prior arrangement only, thank you.
 <p>Hello from your hosts Barb and Fraser Grant.</p>
 <p>From a farming background in Southland we moved to the gorgeous ‘Top of the
 South’ 20 years ago. As well as running our B&amp;B, Fraser works full-time for
-Broadspectrum as a telco technician and I work weekend nights at a local
-café/theatre restaurant. Our two adult children currently live in Australia. The
+Broadspectrum as a telco technician. Our two adult children currently live in Australia. The
 other member of our family is Tsar our Russian Blue cat.</p>
 
 <p>We love all kinds of art and this is reflected inside and outside our home. We
