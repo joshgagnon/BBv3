@@ -405,7 +405,7 @@ other member of our family is Tsar our Russian Blue cat.</p>
 have a large garden, which we planted from bare ground six years ago and
 keeping this maintained keeps us busy. When we get time off we like to explore
 our local area and further afield. We love music and go to concerts when we can.</p>
-<p>After three seasons of operation we are proud to rate highly on review sites.</p>
+<p>After four seasons of operation we are proud to rate highly on review sites.</p>
 </div>
 
 
@@ -475,14 +475,14 @@ New Zealand
         </button>
       </div>
       <div class="modal-body">
-           
+
 
         <form method="post" id="request-form" action="inquiry" class="needs-validation">
             @csrf
           <div class="form-row mb-3">
-          
+
            <div class="calendar-container" >
-               
+
 
            </div>
 

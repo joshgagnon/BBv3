@@ -57,11 +57,11 @@ const dayMutator = (div, date) => {
     if(green) {
         $(div).append('<div class="green-room-icon"><i class="fas fa-bed"></i></div>')
     }
-    return div; 
+    return div;
 }
 
 window.homeJS = function(){
-   
+
 
     $('.carousel').on("slide.bs.carousel", function(e) {
         const $tar = $(e.relatedTarget)
@@ -80,9 +80,9 @@ window.homeJS = function(){
 
     getAvailability()
         .then(() => {
-        const picker = new Lightpick({ 
-            field: $('.date-field-start')[0], 
-            secondField: $('.date-field-end')[0], 
+        const picker = new Lightpick({
+            field: $('.date-field-start')[0],
+            secondField: $('.date-field-end')[0],
             singleDate: false,
             parentEl: '.calendar-container',
             numberOfColumns: 1,
@@ -129,7 +129,7 @@ window.manageJS = function() {
     let _calendar;
     getAvailability()
         .then(() => {
-            _calendar = new Lightpick({ 
+            _calendar = new Lightpick({
                 parentEl: '.calendar-container',
                 field: $('.calendar-date-field')[0],
                 numberOfColumns:2,

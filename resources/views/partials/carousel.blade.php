@@ -12,16 +12,15 @@
   @foreach($images as $image)
       <div class="carousel-item {{{ $image == $images[0] ?  'active' : '' }}}">
          @if($bg)
-          <div class="bg-image" {{{ $image == $images[0] ?  'src' : 'lazy-load-src' }}}="{{ asset($image) }}"
+          <div class="bg-image d-block w-100" {{{ $image == $images[0] ?  'src' : 'lazy-load-src' }}}="{{ asset($image) }}"
             @if($image == $images[0])
               style="background-image: url({{ asset($image) }})"
             @endif
             alt="...">
             </div>
         @else
-        <img class="bg-image" {{{ $image == $images[0] ?  'src' : 'lazy-load-src' }}}="{{ asset($image) }}"
+        <img class="bg-image d-block w-100" {{{ $image == $images[0] ?  'src' : 'lazy-load-src' }}}="{{ asset($image) }}"
             alt="..."/>
-
 
         @endif
         <div class="carousel-caption">
