@@ -118,37 +118,7 @@ loadjscssfile('https://media.datahc.com/ratinghotel/stellar2/styles.css?v' + ran
 </div>
 </section>
 
-<section id="about">
-<h2 id="about-head">Redvale Ridge Bed and Breakfast</h2>
-<div class="container">
-<div class="row">
-<div class="col-lg-6">
-<p>Welcome to our beautiful contemporary country home situated on top of a ridge at 114 Redvale Rd, in the award winning GALEO Estate, Tasman, South Island, New Zealand. In building our home we
-thought about health, well-being and impact on the environment so incorporated many eco
-features. The views from our home are simply stunning, taking in the Western Ranges,
-Tasman Bay out to D’Urville Island and at night the twinkling lights of Nelson.</p>
-<p>Being between the thriving town of Richmond and the beautiful coastal village of Mapua, we
-are surrounded by wineries, craft breweries, artists and food producers and are close to the
-popular coastal section of the Tasman Great Taste Trail and the beautiful Moturoa/Rabbit
-Island Beach and Recreation area. We are also centrally located between Nelson and Motueka
-– approximately 20 mins to each.</p>
-</div>
-<div class="col-lg-6">
-<p>Our rural sub-division is known for its bird life and here you will see Pukeko, quail, ducks,
-plover, swallows, kingfisher, low flying hawks and in increasing numbers our wonderful
-native birds such as the fantail and tui.</p>
-<p>There are a number of cafes and restaurants within a short distance including the wonderful
-Playhouse Café and Theatre. We also offer an optional tasting platter on the night of
-arrival.</p>
-<p>We are happy to share with you our love of New Zealand and especially the south island and
-help you make plans for all the wonderful things to do and see in this area; we can also assist with bookings.
-</p>
-</div>
-</div>
 
-
- </div>
-</section>
 <section id="bg-pic-1">
     <div class="container no-bg bright">
     <div class="col-md-8 col-md-offset-2">
@@ -162,163 +132,13 @@ help you make plans for all the wonderful things to do and see in this area; we 
     </div>
 </section>
 
+@include('partials.about')
 
+@include('partials.house')
 
-<section id="house">
-<h2 id="home-head">The Home</h2>
-<div class="container">
-<div class="row">
-<div class="col-lg-6">
-<p>Built in 2012 our home is a large, one level dwelling with two purpose built B&B rooms on the
-eastern side. The house incorporates many eco features, which are:</p>
-<ul class="list">
-<li>Passive solar, thermally and energy efficient design</li>
+@include('partials.rooms')
 
-<li>Thermally broken throughout the building envelope</li>
-
-<li>Hybrid systems which includes power and water automated management</li>
-
-<li>Solar panels for hot water and power</li>
-
-<li>Non toxic building materials</li>
-
-<li>Recycled Blue Gum wallboards</li>
-
-<li>Uprated natural wool insulation</li>
-
-<li>Low VOC paint and finishes</li>
-
-<li>Energy efficient lighting and appliances</li>
-
-<li>Recycled plastic bottle carpet in bedrooms</li>
-
-<li>Pellet fire and panel heaters for heating when required</li>
-</ul>
-<p>Guests have their own parking area and entrance allowing for autonomy when needed. There
-are a number of seating areas outside for relaxing and taking in the stunning views.  Our spa is
-great to sit in at night where you can gaze at the twinkling night sky or the lights of Nelson. </p>
-<p>Our home is full of beautiful art work in many mediums, a lot of which has been bought in the
-‘top of the south’. We have a number of beautiful books on New Zealand, which are lovely to
-sit and relax with and we have a number of board games to have fun with.</p>
-
-
-</div>
-<div class="col-lg-6">
-	 @include('partials.carousel', array('images' => $house,'bg' => false, 'id' => 'house-cara'))
-<p>Our garden is a large developing one.  At the front of the house there is a beautiful border
-garden broken by an outdoor seating and fire area. In different areas around the house there
-are natives, fruit trees, raised vegetable and herb gardens and a camellia hedge. The gully part
-of the section contains mostly native shrubs, trees and grasses.</p>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="rooms">
-<h2 id="rooms-head">B&amp;B Rooms and Rates</h2>
-<div class="container">
-<div class="row">
-<div class="col-lg-6">
-<p>There are two luxurious rooms, the Red Room and Green Room, both with King beds.  </p>
-
-<p>Each room has:</p>
-<ul class="list">
-<li>Beautiful ensuites</li>
-
-<li>Table and chairs inside and out</li>
-
-<li>Quality beds and bedding</li>
-
-<li>Free WiFi</li>
-
-<li>32" TV, DVD player with a selection of DVDs</li>
-
-<li>CD/USB stereo system</li>
-
-<li>Tea and coffee facilities with freshly ground coffee and baking daily</li>
-
-<li>Small fridge with water and milk provided</li>
-
-<li>Wardrobe and luggage racks</li>
-
-<li>Original artwork</li>
-
-
-<li>Access to outside patio</li>
-
-
-</ul>
-<p>
-*One load of washing included during stay.
-
-</p>
-<p>
-<strong><em>Rates</em></strong><br/>
-$230 - $250 per night.<br/>
-</p>
-
-
-
-<p>
-Children by prior arrangement only, thank you.
-</p>
-</div>
-<div class="col-lg-6">
-	 @include('partials.carousel', array('images' => $rooms,'bg' => false, 'id' => 'rooms-cara'))
-     <p>
-<strong><em>Cancellation Policy</em></strong><br/>
-<ul>
-<li>Two days prior to arrival: 50%</li>
-<li>One day prior to arrival: 100%</li>
-<li>No shows: 100%</li>
-</ul>
-</p>
-
-</div>
-</div>
-</div>
-</section>
-
-
-
-<section id="sustainability">
-<h2 id="sustainability-head">Sustainability</h2>
-<div class="container">
-<div class="row">
-<div class="col-lg-6">
-    <p></p>
-<ul class="list">
-<li>GALEO has won a New Zealand Institute of Surveyors Award of Excellence for Sustainability.
-<li>We built our home with a company that emphasises sustainability.</li>
-<li>We have 16 solar panels on the roof and feed back to the grid. We also use a local power company who uses any excess profits to give back to the local community.</li>
-<li>Because our sub-division has its own sewage system, we only use biodegradable cleaning products.</li>
-<li>We recycle glass, plastics and metals.</li>
-
-
-
-</ul>
-</div>
-<div class="col-lg-6">
-        <p></p>
-<ul class="list">
-    <li>Vegetable scraps are composted and coffee grounds are put on the garden.</li>
-<li>We buy in bulk to cut down on packaging.</li>
-<li>We have planted thousands of plants most of them natives.</li>
-<li>We grow vegetables, fruit trees, citrus trees and berries.</li>
-<li>We only use our dryer for fluffing towels.</li>
-<li>We provide body wash and hand wash in refillable dispensers and will provide shampoo and conditioner if requested.</li>
-<li>We have LED lighting but do not turn on lights where not necessary.  We also use sensor lights in critical places.</li>
-</ul>
-</div>
-
-</div>
-
-</section>
-
-
-
+@include('partials.sustainability')
 
 
 
@@ -337,55 +157,8 @@ Children by prior arrangement only, thank you.
 </section>
 
 
-<section id="todo">
-<h2 id="todo-head">Things To Do</h2>
-<div class="container">
-<div class="row">
-<div class="col-lg-6">
-	 @include('partials.carousel', array('images' => $thingstodo,'bg' => false, 'id' => 'things-cara'))
-</div>
-<div class="col-lg-6 list">
-<p>Below are just some of the things to do in this area. </p>
-<ul class="list">
+@include('partials.thingstodo')
 
-<li>Cycling: The Great Taste Trail <a href="http://www.trailjourneys.co.nz/nelson">www.trailjourneys.co.nz/nelson</a>
-
-<a href="http://www.gentlecycling.co.nz">www.gentlecycling.co.nz</a>, <a href="http://www.wheeliefantastic.co.nz">www.wheeliefantastic.co.nz</a></li>
-
-<li>Wineries (25) and Wine Tours www.baytoursnelson.co.nz <a href="http://www.nelsonwineart.co.nz">www.nelsonwineart.co.nz</a></li>
-
-<li>Beer and Craft Breweries <a href="http://www.craftbrewingcapital.co.nz">www.craftbrewingcapital.co.nz</a></li>
-
-<li>Art/Craft/Pottery Trails <a href="http://www.rubycoastarts.co.nz">www.rubycoastarts.co.nz</a></li>
-
-<li>Boating and Kayaking <a href="http://www.abeltasmanseashuttles.co.nz">www.abeltasmanseashuttles.co.nz</a></li>
-
-<li>Abel Tasman Excursions <a href="http://www.abeltasman.co.nz">www.abeltasman.co.nz</a>, <a href="www.abeltasman.co.nz/a-day/">www.abeltasman.co.nz/a-day</a></li>
-
-<li>Mapua Ferry <a href="http://www.mapuaferry.co.nz">www.mapuaferry.co.nz</a></li>
-
-<li>Tramping</li>
-
-
-<li>Fishing: Sea and River</li>
-
-<li>Golfing: A number of courses within a short distance. We have a male and female set of clubs.</a></li>
-
-<li>Walks</a></li>
-
-<li>Happy Valley Adventures <a href="http://www.happtvalleyadventures.co.nz">www.happtvalleyadventures.co.nz</a></li>
-
-
-
-<li>Beaches</li>
-
-<li>Markets <a href="http://www.nelsonmarket.co.nz">www.nelsonmarket.co.nz</a></li>
-
-<li>Shopping: Richmond and Nelson both offer great shopping.</li>
-</ul>
-</div>
-</div>
-</section>
 
 <section id="hosts">
 <div class="container">
@@ -428,41 +201,7 @@ our local area and further afield. We love music and go to concerts when we can.
 
 
 
-
-<section id="location">
-	<h2  id="location-head">Location &amp; Bookings</h2>
-<div class="container">
-<div class="row">
-<div class="col-md-6">
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2997.6950607823537!2d173.06920751570888!3d-41.29374067927292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d3b9a0ce77f07d1%3A0xff8714b6b2d46ae7!2sRedvale+Ridge+B%26B!5e0!3m2!1sen!2sau!4v1554866058674!5m2!1sen!2sau" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-</div>
-
-<div class="col-md-6">
-    <p/>
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#calendar-modal">
-  Check Availability!
-</button>
-
-<div>
-
-<p><strong>Phone</strong> <a href="tel:+64224566478">+64 224 566 478</a></p>
-<p><strong>Email</strong> <a href="mailto:redvaleridge@gmail.com">redvaleridge@gmail.com</a></p>
-<p><strong>Address</strong><br/>
-
-114 Redvale Rd<br/>
-Galeo Estate<br/>
-Redwood Valley<br/>
-Tasman<br/>
-South Island<br/>
-New Zealand
- </p>
-
-</div>
-</div>
-</div>
-</div>
-</section>
-
+@include('partials.location');
 
 
 <div class="modal fade" id="calendar-modal" tabindex="-1" role="dialog" aria-labelledby="calendar-modal" aria-hidden="true">

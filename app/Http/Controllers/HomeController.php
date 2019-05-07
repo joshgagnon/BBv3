@@ -20,9 +20,9 @@ class HomeController extends Controller {
                     $results[] = str_replace(public_path(), '', $file->getPathname());
                 }
             }
+            sort($results);
             return $results;
         };
-
         $banner = $getFiles('/images/banner_opt');
         $rooms = $getFiles('/images/rooms_opt');
         $house = $getFiles('/images/house_opt');
