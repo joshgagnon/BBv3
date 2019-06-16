@@ -287,6 +287,7 @@ body{
 }
 .logo{
     max-width: 100%;
+      padding-top:35px;
 }
 @media only screen and  (min-width : 400px) {
     body{
@@ -317,7 +318,7 @@ body{
 }
 
 
-@media only screen and  (min-width : 1300px) {
+@media only screen and  (min-width : 1100px) {
     #top{
         height: 140px;
         overflow-y:hidden;
@@ -452,18 +453,19 @@ p.quote {
 
 
 .nav-links{
-    float:right;
-    height:100%;
-    display:table;
-    text-align: center;
-    width:100%;
+    float: right;
+    height: 100%;
+    display: flex;
+align-items: flex-end;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 .nav-links a{
-    padding:4px 4px;
-    display:table-cell;
-    vertical-align: bottom;
-    color:#333;
+    padding: 4px 12px;
+    color: #333;
+    flex-grow: 1;
+    text-align: center;
 }
 .nav-links a:hover{
     text-decoration: none;

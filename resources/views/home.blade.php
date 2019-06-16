@@ -15,7 +15,9 @@ The Home
 <a href="#rooms-head">
 Rooms & Rates
 </a>
-
+    <a href="#sustainability">
+    Sustainability
+    </a>
     <a href="#hosts-head">
     About Us
     </a>
