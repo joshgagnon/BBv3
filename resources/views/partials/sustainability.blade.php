@@ -22,10 +22,10 @@
 <ul class="list">
     <li>Vegetable scraps are composted and coffee grounds are put on the garden.</li>
 <li>We buy in bulk to cut down on packaging.</li>
-<li>We have planted thousands of plants most of them natives.</li>
+<li>We have planted thousands of plants most of them natives. Each year we give away trees that have self seeded.</li>
 <li>We grow vegetables, fruit trees, citrus trees and berries.</li>
 <li>We only use our dryer for fluffing towels.</li>
-<li>We provide body wash and hand wash in refillable dispensers and will provide shampoo and conditioner if requested.</li>
+<li>We provide body wash, hand wash, shampoo and conditioner in refillable containers.</li>
 <li>We have LED lighting but do not turn on lights where not necessary.  We also use sensor lights in critical places.</li>
 </ul>
 </div>
