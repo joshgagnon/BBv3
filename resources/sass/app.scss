@@ -184,7 +184,6 @@ border-bottom-left-radius: 10px;
 border-bottom-right-radius: 10px;
 text-align: center;
 }
-
 .menu-box .image-box{
     height:300px;
     background-position:center center;
@@ -211,7 +210,8 @@ text-align: center;
 .location-box{
     background-image: url('/images/location.jpg') ;
 }
-#main-menu .container{
+
+#main-menu > div{
     padding-top:15px;
     padding-bottom:10px;
 }
