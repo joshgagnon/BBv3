@@ -121,6 +121,10 @@ loadjscssfile('https://media.datahc.com/ratinghotel/stellar2/styles.css?v' + ran
 
 <div style="zoom: 0.7;" id="TA_certificateOfExcellence33" class="TA_certificateOfExcellence"><ul id="mzUuH8s6YqJ" class="TA_links taZUHe"><li id="SYtXjoL" class="wolrUj"><a target="_blank" href="https://www.tripadvisor.co.nz/Hotel_Review-g8099604-d7986014-Reviews-Redvale_Ridge_B_B-Redwood_Valley_Nelson_Tasman_Region_South_Island.html"><img src="https://www.tripadvisor.co.nz/img/cdsi/img2/awards/CoE2017_WidgetAsset-14348-2.png" alt="TripAdvisor" class="widCOEImg" id="CDSWIDCOELOGO"/></a></li></ul></div><script async src="https://www.jscache.com/wejs?wtype=certificateOfExcellence&amp;uniq=33&amp;locationId=7986014&amp;lang=en_NZ&amp;year=2019&amp;display_version=2" data-loadtrk onload="this.loadtrk=true"></script>
 
+<div style="zoom: 0.7;text-align:left" id='widgetContainerBox' data-isaddnofollow='false'></div>
+<script src='https://apps.expediapartnercentral.com/lodging/content/award/static/js/rating/12456521/Hotels-Light-Square-en_NZ.js?widgetName=Property Rating Widget&hotelName=Redvale Ridge B&B&noFollow=false'></script>
+
+
 </div>
 </section>
 

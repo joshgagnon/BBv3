@@ -23,7 +23,7 @@ body {
     padding-bottom: 180px;
     background-color: #fafcfc;
     font-family: 'Open Sans', sans-serif;
-  
+
     font-size: 16px;
     overflow-x:hidden;
 }
@@ -256,7 +256,7 @@ text-align: center;
 
 .list li{
     list-style:none;
-   padding-left: 1em; 
+   padding-left: 1em;
     text-indent: -.7em;
 }
 .list li:before {
@@ -333,7 +333,7 @@ body{
             max-width:800px;
     }
     #links > div{
-        margin:5px 28px;
+        margin:5px 16px;
     }
 }
 
@@ -493,7 +493,7 @@ margin: 0 auto;
 .lightpick__month {
     padding: 4px;
     background-color: #FFF;
-    @include media-breakpoint-up(md) { 
+    @include media-breakpoint-up(md) {
         width: $month-width;
     }
 }
@@ -502,7 +502,7 @@ margin: 0 auto;
     .lightpick__day{
         position: relative;
     z-index: 2;
-    @include media-breakpoint-up(md) { 
+    @include media-breakpoint-up(md) {
       font-size: 18px;
     padding: 20px;
         height: $day-height;
@@ -520,19 +520,19 @@ $green-room:#55e234;
     position: absolute;
     bottom:0px;
     font-size:9px;
-    @include media-breakpoint-up(md) { 
+    @include media-breakpoint-up(md) {
         bottom:4px;
         font-size:12px;
 
     }
-    
+
     pointer-events:none;
 }
 
 .red-room-icon {
     color: $red-room;
     left:7px;
-    @include media-breakpoint-up(md) { 
+    @include media-breakpoint-up(md) {
         left:12px;
     }
 }
@@ -541,7 +541,7 @@ $green-room:#55e234;
 .green-room-icon {
     color: $green-room;
     right:7px;
-    @include media-breakpoint-up(md) { 
+    @include media-breakpoint-up(md) {
         right: 12px;
     }
 }
