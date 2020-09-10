@@ -9,9 +9,9 @@
 
 <div class="col-md-6">
     <p/>
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#calendar-modal">
+<a href="https://www.straitreservations.com/Reservations/Responsive/Search.aspx?PropertyID=30243&Action=Widget" target="_blank"  class="btn btn-primary">
   Check Availability!
-</button>
+</a>
 
 <div>
 

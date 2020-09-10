@@ -28,9 +28,9 @@ Rooms & Rates
 </div>
 
 <div class="booking-wrapper">
-<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#calendar-modal">
+<a href="https://www.straitreservations.com/Reservations/Responsive/Search.aspx?PropertyID=30243&Action=Widget" target="_blank"  tager class="btn btn-danger" >
 Check availability &amp; make a booking
-</button>
+</a>
 </div>
 
 
