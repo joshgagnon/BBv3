@@ -28,7 +28,7 @@ Rooms & Rates
 </div>
 
 <div class="booking-wrapper">
-<a href="https://www.straitreservations.com/Reservations/Responsive/Search.aspx?PropertyID=30243&Action=Widget" target="_blank"  tager class="btn btn-danger" >
+<a href="https://www.freeonlinebooking.com/Reservations/Property.aspx?PropertyGUID=051ded4f-f68f-43ee-9d35-bc0e5300eaf5&Section=BookNow#" target="_blank"  tager class="btn btn-danger" >
 Check availability &amp; make a booking
 </a>
 </div>
